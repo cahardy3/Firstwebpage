@@ -11,10 +11,9 @@ const Header = (props) => {
     );
 };
 
-
 const styles = {
     viewStyle: {
-        backgorundcolor: '#F8F8F8',
+        backgroundColor: '#F8F8F8',
         justifyContent: 'center',
         alignItems: 'center',
         hieght: 60,
