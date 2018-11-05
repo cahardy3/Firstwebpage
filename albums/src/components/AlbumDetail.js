@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image, Button, Linking } from 'react-native';
+import { View, Text, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const AlbumDetail = ({album}) => {
     const { title, artist, thumbnail_image, image, url } = album;
@@ -11,23 +12,23 @@ const AlbumDetail = ({album}) => {
         thumbnailCountainerStyle,
         headerTextStyle,
         albumStyle,
-        buttonStyle
     } = styles;
 
     return (
         <Card>
             <CardSection>
-                <View 
-                    style={thumbnailCountainerStyle}>
-                </View>
-                <View styles={headerContentStyle}>
-                    <Text style={headerTextStyle}>{title}</Text>
+                <View style={thumbnailCountainerStyle}>
                     <Image
                         style={thumbnailStyle}
                         source={{ uri: thumbnail_image }}
                     />
                 </View>
+                <View styles={headerContentStyle}>
+                    <Text style={headerTextStyle}>{title}</Text>
+                    <Text>{artist}</Text>
+                </ View>
             </CardSection>
+            
             <CardSection>
                 <Image
                 style={albumStyle}
@@ -35,6 +36,11 @@ const AlbumDetail = ({album}) => {
                 />
             </CardSection>
 
+            <CardSection>
+                <Button onPress={() => Linking.openURL(url)}>
+                Buy {title}
+                </Button>
+            </CardSection>
         </Card>
     )
 };
@@ -52,14 +58,6 @@ const styles = {
         height: 300,
         flex: 1,
         width: null
-    },
-    buttonStyle: {
-        backgroundColor: "rgba(92, 99,216, 1)",
-        width: 300,
-        height: 45,
-        borderColor: "transparent",
-        borderWidth: 0,
-        borderRadius: 5
     },
     thumbnailStyle: {
         height: 50,
