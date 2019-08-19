@@ -19,7 +19,7 @@ console.log(hash.hex())
 class ComicList extends Component {
     constructor(props) {
         super(props)
-        this.url = ("https://gateway.marvel.com/v1/public/characters?ts="+timestamp+"&orderBy=name&limit=50&apikey="+PUBLIC_KEY+"&hash="+hash);
+        this.url = ("https://gateway.marvel.com/v1/public/characters?ts="+timestamp+"&nameStartsWith=captain&orderBy=name&limit=50&apikey="+PUBLIC_KEY+"&hash="+hash);
     }
     state = { comics: [] };
     
@@ -38,8 +38,7 @@ class ComicList extends Component {
        return this.state.comics.map(comic => 
        <ComicDetail key={comic.name} comic={comic} />
         );
-    }
-    
+       }
     render() {
        console.log(this.state)
        return (

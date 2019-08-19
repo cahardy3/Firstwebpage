@@ -1,55 +1,63 @@
-import React from 'react';
-import { Text } from 'react-native';
-import { SearchBar } from 'react-native-elements'
+//import React,{ Component } from 'react';
+//import { TextInput, Text, View } from 'react-native';
+//import { SearchBar } from 'react-native-elements';
 
-<SearchBar
-  onChangeText={someMethod}
-  onClear={someMethod}
-  placeholder='Type Here...' />
+var NativeModules, PropTypes, RNSearchBar, React, SearchBar;
 
-<SearchBar
-  clearIcon={{ color: 'red' }}
-  searchIcon={false} // You could have passed `null` too
-  onChangeText={someMethod}
-  onClear={someMethod}
-  placeholder='Type Here...' />
+React = require('react-native');
 
-<SearchBar
-  round
-  searchIcon={{ size: 24 }}
-  onChangeText={someMethod}
-  onClear={someMethod}
-  placeholder='Type Here...' />
+RNSearchBar = React.requireNativeComponent('RNSearchBar', null);
 
-<SearchBar
-  lightTheme
-  searchIcon={<CustomComponent />}
-  onChangeText={someMethod}
-  onClear={someMethod}
-  placeholder='Type Here...' />
+PropTypes = React.PropTypes;
 
-<SearchBar
-  lightTheme
-  onChangeText={someMethod}
-  onClear={someMethod}
-  placeholder='Type Here...' />
+NativeModules = React.NativeModules;
 
-<SearchBar
-  showLoading
-  platform="ios"
-  cancelButtonTitle="Cancel"
-  placeholder='Search' />
+SearchBar = React.createClass({
+  propTypes: {
+    //placeholder: PropTypes.string,
+    text: PropTypes.string,
+    barTintColor: PropTypes.string,
+    tintColor: PropTypes.string,
+    textFieldBackgroundColor: PropTypes.string,
+    showsCancelButton: PropTypes.bool,
+    onChange: PropTypes.func,
+    onChangeText: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onSearchButtonPress: PropTypes.func,
+    onCancelButtonPress: PropTypes.func,
+    hideBackground: PropTypes.bool
+  },
+  _onChange: function(e) {
+    var base, base1;
+    if (typeof (base = this.props).onChange === "function") {
+      base.onChange(e);
+    }
+    return typeof (base1 = this.props).onChangeText === "function" ? base1.onChangeText(e.nativeEvent.text) : void 0;
+  },
+  _onPress: function(e) {
+    var base, base1, button;
+    button = e.nativeEvent.button;
+    if (button === 'search') {
+      return typeof (base = this.props).onSearchButtonPress === "function" ? base.onSearchButtonPress(e.nativeEvent.searchText) : void 0;
+    } else if (button === 'cancel') {
+      return typeof (base1 = this.props).onCancelButtonPress === "function" ? base1.onCancelButtonPress() : void 0;
+    }
+  },
+  blur: function(){
+    NativeModules.RNSearchBarManager.blur(React.findNodeHandle(this));
+  },
+  focus: function(){
+    NativeModules.RNSearchBarManager.focus(React.findNodeHandle(this));
+  },
+  render: function() {
+    return <RNSearchBar
+      style={{height: NativeModules.RNSearchBarManager.ComponentHeight}}
+      onChange={this._onChange}
+      onPress={this._onPress}
+      {...this.props}
+    />;
+  }
+});
 
-<SearchBar
-  showLoading
-  platform="android"
-  placeholder='Search' />
-
-<SearchBar
-  showLoading
-  platform="android"
-  cancelIcon={{ type: 'font-awesome', name: 'chevron-left' }}
-  placeholder='Search' />
-
-  export default SearchBar;
-  
+module.exports = SearchBar;

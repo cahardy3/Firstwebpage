@@ -3,6 +3,7 @@ import { View, Text, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 
+const size = "/portrait_xlarge.jpg"
 const ComicDetail = ({comic}) => {
     const { name, resourceURI, thumbnail, items, description } = comic;
     console.log(thumbnail)
@@ -13,10 +14,16 @@ const ComicDetail = ({comic}) => {
         headerTextStyle,
         albumStyle,
     } = styles;
-
+    console.log(thumbnail.path+size)
     return (
         <Card>
             <CardSection>
+                <View styles={thumbnailCountainerStyle}>
+                    <Image
+                    style={thumbnailStyle}
+                    source={{ uri: thumbnail.path+size }}
+                    />
+                </View>
                 <View styles={headerContentStyle}>
                     <Text style={headerTextStyle}>{name}</Text>
                     <Text>{description}</Text>
@@ -25,7 +32,6 @@ const ComicDetail = ({comic}) => {
         </Card>
     )
 };
-
 const styles = {
     headerContentStyle: {
         flexDirection: 'column',
@@ -41,12 +47,12 @@ const styles = {
         width: null
     },
     thumbnailStyle: {
-        height: 50,
-        width: 50
+        height: 225,
+        width: 150
     },
     thumbnailCountainerStyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'centre',
+        alignItems: 'centre',
         marginLeft: 10,
         marginRight: 10
     }
