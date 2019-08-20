@@ -94,7 +94,7 @@ if (markBmi > johnBmi) {
     console.log('john is the fatty');
 }
 */
-
+/*
 var firstName = 'John';
 var age = prompt ('what is John\'s name');
 
@@ -107,13 +107,80 @@ if (age < 13) {
 } else if (age >= 30) {
     console.log(firstName + ' is a man ');
 }
+*/
+/*
+var firstName = 'John';
+var age = prompt ('what is John\'s age');
+
+var drink = age >= 18 ? 'Beer' : 'Juice';
+console.log (firstName + ' drinks ' + drink);
+*/
+/*
+var firstName = 'John';
+var job = prompt ('what is John\'s Job');
+
+switch (job) {
+    case 'teacher':
+    case 'instructor':
+        console.log(firstName + ' teaches kids');
+        break;
+    case 'coder':
+        console.log(firstName + ' is a pain in my arse');
+        break;
+    case 'driver':
+        console.log(firstName + ' drives me round the bend');
+        break;
+    default:
+        console.log(firstName + ' should get a job');
+}
+*/
+
+/*
+var firstName = 'John';
+var age = prompt ('what is John\'s name');
 
 
+switch (true) {
+    case age < 13:
+        console.log(firstName + 'is a boy');
+        break;
+    case age >= 13 && age < 20:
+        console.log(firstName + ' is a teenager');
+        break;
+    case age >= 20 && age < 30:
+        console.log(firstName + ' is a young man');
+        break;
+    default:
+        console.log(firstName + ' is a man ');
+}
+*/
 
+var johnScorea = parseInt (prompt ( 'what was John\'s team first score'), 10);
+var johnScoreb = parseInt (prompt ( 'what was John\'s team second score'), 10);
+var johnScorec = parseInt (prompt ( 'what was John\'s team third score'), 10);
 
+var mikeScorea = parseInt (prompt ( 'what was Mike\'s team first score'), 10);
+var mikeScoreb = parseInt (prompt ( 'what was Mike\'s team second score'), 10);
+var mikeScorec = parseInt (prompt ( 'what was Mike\'s team third score'), 10);
 
+var maryScorea = parseInt (prompt ( 'what was mary\'s team first score'), 10);
+var maryScoreb = parseInt (prompt ( 'what was mary\'s team second score'), 10);
+var maryScorec = parseInt (prompt ( 'what was mary\'s team third score'), 10);
 
+var johnAverage = (johnScorea + johnScoreb + johnScorec)/3;
+var mikeAverage = (mikeScorea + mikeScoreb + mikeScorec)/3;
+var maryAverage = (maryScorea + maryScoreb + maryScorec)/3;
 
-
-
-
+switch (true) {
+    case johnAverage > mikeAverage && johnAverage > maryAverage:
+        console.log('John\'s team wins with average ' + johnAverage + ' mike\'s team got ' + (mikeAverage) + ' mary\'s team got ' + (maryAverage)  );
+        break;
+    case mikeAverage > johnAverage && mikeAverage > maryAverage:
+        console.log('Mike\'s team wins with average ' + mikeAverage + ' john\'s team got ' + (johnAverage) + ' mary\'s team got ' + (maryAverage)  );
+        break; 
+    case maryAverage > johnAverage && maryAverage > johnAverage:
+        console.log('Mary\'s team wins with average ' + maryAverage + ' john\'s team got ' + (johnAverage) + ' mike\'s team got ' + (mikeAverage)  );
+        break; 
+    default:
+    console.log('it is a draw');
+}
