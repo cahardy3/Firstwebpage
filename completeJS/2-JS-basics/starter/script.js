@@ -154,7 +154,7 @@ switch (true) {
         console.log(firstName + ' is a man ');
 }
 */
-
+/*
 var johnScorea = parseInt (prompt ( 'what was John\'s team first score'), 10);
 var johnScoreb = parseInt (prompt ( 'what was John\'s team second score'), 10);
 var johnScorec = parseInt (prompt ( 'what was John\'s team third score'), 10);
@@ -184,3 +184,98 @@ switch (true) {
     default:
     console.log('it is a draw');
 }
+*/
+/*
+function calculateAge(birthYear) {
+    return 2018 - birthYear;
+    
+}
+
+var ageJohn= calculateAge(1990);
+var ageMike= calculateAge(1948);
+var ageJane= calculateAge(1969);
+console.log(ageJohn, ageMike, ageJane);
+
+function yeatsUntilRet(year, firstName) {
+    var age = calculateAge(year);
+    var retirment = 65 - age;
+    console.log(firstName + ' retires in ' + retirment + ' years')
+}
+yeatsUntilRet(1990, 'John');
+*/
+/*
+var whatDoYouDo = function (job, firstName) {
+    switch(job) {
+        case 'teach':
+            return firstName + ' teaches bratss';
+        case 'nob':
+            return firstName + ' pisses me off';
+        case 'coder':
+            return firstName + ' is a intravert';
+        default:
+            return firstName + ' smells';
+    }
+}
+
+console.log(whatDoYouDo('teach', 'John'));
+console.log(whatDoYouDo('nob', 'Peter'));
+console.log(whatDoYouDo('coder', 'Ben'));
+console.log(whatDoYouDo('balls', 'Joel'));
+*/
+/*
+var names = ['John','Mark', 'Jane'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[2]);
+console.log(names.length);
+
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+
+var john = ['John', 'Smith', 1990, 'teacher', false];
+
+john.push('blue');
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(1990));
+*/
+
+
+var bills = [124, 48, 268];
+
+function tipCalc(bill) {
+    var percent;
+    if (bill < 50) { 
+        percent = .2;
+    } else if (bill >= 50 && bill < 200){
+        percent =  .15;
+    } else {
+        percent =  .1;
+    }
+    return percent * bill;
+}
+
+var tips = [tipCalc(bills[0]),
+            tipCalc(bills[1]),
+            tipCalc(bills[2])];
+
+function totalCalc (tip, bill) {
+       return tip + bill;
+    
+}
+
+var total = [totalCalc(tips[0], bills[0]),
+            totalCalc(tips[1], bills[1]),
+            totalCalc(tips[2], bills[2])];
+
+console.log(bills)
+console.log(tips)
+console.log(total)
+
