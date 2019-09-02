@@ -247,7 +247,7 @@ console.log(john);
 console.log(john.indexOf(1990));
 */
 
-
+/*
 var bills = [124, 48, 268];
 
 function tipCalc(bill) {
@@ -278,4 +278,81 @@ var total = [totalCalc(tips[0], bills[0]),
 console.log(bills)
 console.log(tips)
 console.log(total)
+*/
+/*
+var john ={
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'bob', 'Emily'],
+    job: 'Teacher',
+    isMarried: false
+};
+
+console.log(john.job);
+console.log(john['lastName']);
+
+john.job = 'designer';
+john['isMarried'] = true;
+
+console.log(john);
+
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.lastName = 'Smith';
+jane['birthYear'] = '1999';
+console.log(jane);
+*/
+/*
+var john ={
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', 'Mark', 'bob', 'Emily'],
+    job: 'Teacher',
+    isMarried: false,
+    calcAge: function() {
+    this.age = 2018 - this.birthYear;
+    }
+};
+
+
+john.calcAge();
+console.log(john);
+*/
+
+
+var john ={
+    fullName: 'John Smith',
+    johnHeight: 1.89,
+    johnMass: 78,
+    calcBmi: function() {
+        this.bmi = this.johnMass / (this.johnHeight * this.johnHeight)
+        return this.bmi;
+    }
+};
+john.calcBmi();
+
+
+var mark ={
+    fullName: 'Mark Jones',
+    markHeight: 1.89,
+    markMass: 78,
+    calcBmi: function() {
+        this.bmi = this.markMass / (this.markHeight * this.markHeight)
+        return this.bmi;
+    }
+};
+
+if (john.calcBmi() > mark.calcBmi()) {
+    console.log(john.fullName + ' has a BMI of ' + john.bmi + ' ' +
+                mark.fullName + ' has a lower BMI of ' + mark.bmi);
+}else if (mark.bmi > john.bmi) {
+    console.log(mark.fullName + ' has a BMI of ' + mark.bmi + ' ' +
+                john.fullName + ' has a lower BMI of ' + john.bmi);
+}else {
+    console.log('There BMI scores are the same');
+};
+   
+
 
