@@ -321,7 +321,7 @@ john.calcAge();
 console.log(john);
 */
 
-
+/*
 var john ={
     fullName: 'John Smith',
     johnHeight: 1.89,
@@ -353,6 +353,142 @@ if (john.calcBmi() > mark.calcBmi()) {
 }else {
     console.log('There BMI scores are the same');
 };
-   
+*/
+
+/*
+for (var i = 0; i < 10; i++) {
+    console.log(i)
+}
+
+
+
+
+var john = ['John', 'Smith', 1990, 'teacher', false];
+
+for (var i = 0; i < john.length; i++ ) {
+    console.log(john[i]);
+}
+var i =0
+while(i < john.length) {
+    console.log(john[i]);
+    i++;
+}
+*/
+/*
+var john = ['John', 'Smith', 1990, 'teacher', false, 'blue'];
+
+for (var i = 0; i < john.length; i++ ) {
+    if (typeof john[i] !== 'string') continue;
+    console.log(john[i]);
+}
+
+
+var john = ['John', 'Smith', 1990, 'teacher', false, 'blue'];
+
+for (var i = 0; i < john.length; i++ ) {
+    if (typeof john[i] !== 'string') break;
+    console.log(john[i]);
+}
+
+
+for (var i =john.length - 1; i >= 0; i--) {
+    console.log(john[i]);
+}
+*/
+
+var bill = [124, 48, 268, 180, 42,]
+var tips = [];
+var total = [];
+var percent = 0;
+
+
+for (var i = 0; i < bill.length; i++ ) {
+    if (bill[i] < 50) { 
+        percent = .2;
+        tips.push(percent * bill[i])
+    } else if (bill[i] >= 50 && bill[i] < 200){
+        percent =  .15;
+        tips.push(percent * bill[i])
+    } else {
+        percent =  .1;
+        tips.push(percent * bill[i])
+    }
+}
+
+
+for (var i = bill.length - 1; i >= 0; i--) {
+    total[i] = (bill[i] + tips[i]);
+}
+
+console.log(bill)
+console.log(tips)
+console.log(total)
+
+var mBill = [77, 375, 110, 45,]
+var mTips = [];
+var mTotal = [];
+var mpercent = 0;
+
+
+for (var i = 0; i < mBill.length; i++ ) {
+    if (mBill[i] < 100) { 
+        mpercent = .2;
+        mTips.push(percent * mBill[i])
+    } else if (mBill[i] >= 100 && mBill[i] < 300){
+        mpercent =  .1;
+        mTips.push(percent * bill[i])
+    } else {
+        mpercent =  .25;
+        mTips.push(percent * mBill[i])
+    }
+}
+
+
+for (var i = mBill.length - 1; i >= 0; i--) {
+    mTotal[i] = (mBill[i] + mTips[i]);
+}
+
+console.log(mBill)
+console.log(mTips)
+console.log(mTotal)
+var mtotalTips = 0;
+var jtotalTips = 0;
+
+for (i = 0; i < tips.length; i++) {
+       var jtotalTips = (tips[i] + jtotalTips);
+}
+
+for (i = 0; i < mTips.length; i++) {
+    mtotalTips = (mTips[i] + mtotalTips);
+}
+
+console.log(mtotalTips / mTips.length)
+console.log(jtotalTips / tips.length)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
