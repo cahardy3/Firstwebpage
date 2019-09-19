@@ -10,7 +10,7 @@ import SearchBar from './src/components/SearchBar';
 const ComApp = () => (
   <View style={{ flex:1 }}>
       <Header headerText={'comics'} /> 
-      <SearchBar/>
+      <ComicList/>
   </View>
 );
 

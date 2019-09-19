@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView } from 'react-native';
+import { Text, ScrollView, Button, TextInput, View  } from 'react-native';
 import ComicDetail from './ComicDetail';
 
 const axios = require ("axios");
@@ -15,6 +15,29 @@ console.log(timestamp)
 console.log(PUBLIC_KEY)
 console.log(PRIVATE_KEY)
 console.log(hash.hex())
+
+class heroSearch extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {text: ''};
+    }
+    render() {
+      return (
+        <View style={{padding: 10}}>
+          <TextInput
+            style={{height: 40}}
+            placeholder="Type here to translate!"
+            onChangeText={(text) => this.setState({text})}
+            var hero={this.state.text}
+          />
+          <Text style={{padding: 10, fontSize: 22}}>
+          {this.state.text}
+          </Text>
+          </View>
+        );
+      }
+  }
+
 
 class ComicList extends Component {
     constructor(props) {
