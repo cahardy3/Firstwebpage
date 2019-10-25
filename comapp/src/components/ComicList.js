@@ -21,7 +21,7 @@ console.log(hash.hex())
 class ComicList extends Component {
     constructor(props) {
         super(props)
-        this.url = ("https://gateway.marvel.com/v1/public/characters?ts="+timestamp+"&nameStartsWith="+ComicSearch+"&orderBy=name&limit=50&apikey="+PUBLIC_KEY+"&hash="+hash);
+        this.url = ("https://gateway.marvel.com/v1/public/characters?ts="+timestamp+"&nameStartsWith="+"hulk"+"&orderBy=name&limit=50&apikey="+PUBLIC_KEY+"&hash="+hash);
     }
     state = { comics: [] };
     

@@ -11,6 +11,7 @@ const Marvel = () => (
   <View style={{ flex:1 }}>
       <Header headerText={'comics'} /> 
       <SearchBar/>
+      <ComicList/>
   </View>
 );
 
